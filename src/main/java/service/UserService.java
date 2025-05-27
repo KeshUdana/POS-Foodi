@@ -13,6 +13,7 @@ public class UserService {
         this.userRepo=userRepo;
     }
     public User registerUser(User user){
-        user.setpassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        return userRepo.save(user);
     }
 }
