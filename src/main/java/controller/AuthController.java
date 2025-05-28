@@ -10,10 +10,11 @@ import service.UserService;
 public class AuthController {
     private final UserService userService;
 
-    @Autowired
+
     public AuthController(UserService userService) {
         this.userService = userService;
     }
+
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
         return userService.registerUser(user);
